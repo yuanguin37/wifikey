@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wifikey"
+version = "1.1.0"
+description = "跨平台 WiFi 密码查看、周围网络扫描、安全审计与报表工具"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "WiFiKey contributors" }]
+keywords = ["wifi", "password", "netsh", "networkmanager", "security", "audit"]
+dependencies = []
+
+[project.optional-dependencies]
+qr = ["qrcode>=7.4"]
+
+[project.scripts]
+wifikey = "wifikey.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["wifikey*"]
